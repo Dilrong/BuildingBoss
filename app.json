@@ -1,0 +1,12 @@
+{
+  "name": "BuildingBoss",
+  "displayName": "BuildingBoss",
+  "expo": {
+    "name": "BuildingBoss",
+    "slug": "BuildingBoss",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
