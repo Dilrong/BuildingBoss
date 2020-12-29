@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
-import { DataTable } from 'react-native-paper';
+import { StyleSheet, SafeAreaView, ScrollView, View } from 'react-native';
+import { DataTable, ActivityIndicator } from 'react-native-paper';
 import { SCALE_8 } from '_styles/spacing';
 import { scaleSize } from '_styles/mixins';
 import { Menu } from '_components/Menu';
@@ -26,10 +26,11 @@ const Detail = () => {
 
     useEffect(() => {
         getStorage()
-    }, [setData])
+    }, [data, setData])
 
     return (
         <ScrollView>
+            {data=== undefined? <ActivityIndicator/>:<View/>}
             <DataTable>
                 <DataTable.Header>
                     <DataTable.Title>항목명</DataTable.Title>
@@ -241,11 +242,11 @@ const BasisInfoScreen = ({navigation}) => {
 
     useEffect(() => {
         getStorage()
-    }, [])
+    }, [address])
 
     return (
         <SafeAreaView style={styles.container}>
-            <Menu navigation={navigation} title="건축물대장 표제부" subtitle={address}/>
+            <Menu navigation={navigation} title="건축물대장 표제부"/>
             <Detail/>
         </SafeAreaView>
     )

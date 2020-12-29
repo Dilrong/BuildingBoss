@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import { SCALE_8 } from '_styles/spacing';
 import { scaleSize } from '_styles/mixins';
 import { Menu } from '_components/Menu';
@@ -10,7 +10,7 @@ const SearchScreen = ({navigation}) => {
     const storeData = async (data) => {
         try {
             await AsyncStorage.setItem('@address', data)
-            
+            navigation.navigate('건축물대장 조회')
         } catch (err) {
             console.log(err)
         }
