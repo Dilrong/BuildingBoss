@@ -5,22 +5,24 @@ import { GRAY_DARK } from '_styles/colors';
 
 import SearchScreen from '../scenes/search';
 import BasisInfoScreen from '../scenes/basisInfo';
+import HelpScreen from '../scenes/help';
 
 const Drawer = createDrawerNavigator();
 
 const AppNavigator = () => (
     <Drawer.Navigator>
-        <Drawer.Screen name="주소검색" component={SearchScreen}/>
-        <Drawer.Screen name="기본개요 조회" component={BasisInfoScreen}/>
-        <Drawer.Screen name="표제부 조회" component={SearchScreen}/>
-        <Drawer.Screen name="총괄표제부 조회" component={SearchScreen}/>
-        <Drawer.Screen name="층별개요 조회" component={SearchScreen}/>
-        <Drawer.Screen name="부속지번 조회" component={SearchScreen}/>
-        <Drawer.Screen name="전유공용면적 조회" component={SearchScreen}/>
-        <Drawer.Screen name="오수정화시설 조회" component={SearchScreen}/>
-        <Drawer.Screen name="주택가격 조회" component={SearchScreen}/>
-        <Drawer.Screen name="전유부 조회" component={SearchScreen}/>
-        <Drawer.Screen name="지역지구구역 조회" component={SearchScreen}/>
+        <Drawer.Screen name="주소검색" component={SearchScreen} options={{
+            drawerIcon: () => <MaterialCommunityIcons name="map-search" color={GRAY_DARK} size={26}/>
+        }}/>
+        <Drawer.Screen name="건축물대장 표제부 조회" component={BasisInfoScreen} options={{
+            drawerIcon: () => <MaterialCommunityIcons name="file-search-outline" color={GRAY_DARK} size={26}/>
+        }}/>
+        <Drawer.Screen name="도움말" component={HelpScreen} options={{
+            drawerIcon: () => <MaterialCommunityIcons name="help" color={GRAY_DARK} size={26}/>
+        }}/>
+        <Drawer.Screen name="문의하기" component={SearchScreen} options={{
+            drawerIcon: () => <MaterialCommunityIcons name="chat-outline" color={GRAY_DARK} size={26}/>
+        }}/>
     </Drawer.Navigator>
 )
 
